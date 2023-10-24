@@ -27,13 +27,24 @@ app.use(helmet());
 
 app.get('/books', async (req, res) => {
     let findEverything = await Book.find({});
-    res.send(findEverything)
+    res.send(findEverything);
 })
 
-
 // .find()
+
+app.get('/books', async (req, res) => {
+    let findTitle = await Book.find({title});
+    res.send(findTitle);
+})
+
  
 // findById
+
+app.get('/books', async (req,res) => {
+    let singleBook = await Book.findById(_id);
+    res.send(singleBook);
+})
+
 
 // insertMany
 app.post('/books', async (req, res) => {
