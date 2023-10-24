@@ -24,6 +24,13 @@ app.use(helmet());
 
 
 // find   - finds everything
+
+app.get('/books', async (req, res) => {
+    let findEverything = await Book.find({});
+    res.send(findEverything)
+})
+
+
 // .find()
  
 // findById
